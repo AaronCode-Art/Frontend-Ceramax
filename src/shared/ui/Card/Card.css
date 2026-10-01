@@ -1,0 +1,30 @@
+.card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.card__header {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.card__title {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.card__body {
+  padding: 1.25rem;
+}
+
+.card__footer {
+  padding: 0.85rem 1.25rem;
+  border-top: 1px solid var(--border);
+  background-color: var(--bg);
+}

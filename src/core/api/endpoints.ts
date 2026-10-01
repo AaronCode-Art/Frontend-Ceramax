@@ -1,0 +1,173 @@
+export const API = {
+  AUTH: {
+    LOGIN: '/auth/login',
+    LOGIN_TIENDA: '/auth/login-tienda',
+    REGISTRO: '/auth/registro',
+    LOGOUT: '/auth/logout',
+  },
+  USUARIOS: {
+    LIST: '/usuarios',
+    GET: (id: number) => `/usuarios/${id}`,
+    CREATE: '/usuarios',
+    UPDATE: (id: number) => `/usuarios/${id}`,
+    DELETE: (id: number) => `/usuarios/${id}`,
+  },
+  ROLES: {
+    LIST: '/roles',
+    CREATE: '/roles',
+    UPDATE: (id: number) => `/roles/${id}`,
+    DELETE: (id: number) => `/roles/${id}`,
+    ASSIGN_USER: (userId: number, rolId: number) => `/roles/usuario/${userId}/rol/${rolId}`,
+  },
+  PERMISOS: {
+    LIST: '/permisos',
+  },
+  PRODUCTOS: {
+    LIST: '/productos',
+    GET: (id: number) => `/productos/${id}`,
+    CREATE: '/productos',
+    UPDATE: (id: number) => `/productos/${id}`,
+    DELETE: (id: number) => `/productos/${id}`,
+    SEARCH: '/productos/buscar',
+    ADVANCED: '/productos/busqueda-avanzada',
+    FEATURED: '/productos/destacados',
+  },
+  CATEGORIAS: {
+    LIST: '/categorias',
+    CREATE: '/categorias',
+    UPDATE: (id: number) => `/categorias/${id}`,
+    DELETE: (id: number) => `/categorias/${id}`,
+  },
+  MARCAS: {
+    LIST: '/marcas',
+    CREATE: '/marcas',
+    UPDATE: (id: number) => `/marcas/${id}`,
+    DELETE: (id: number) => `/marcas/${id}`,
+  },
+  PROVEEDORES: {
+    LIST: '/proveedores',
+    CREATE: '/proveedores',
+    UPDATE: (id: number) => `/proveedores/${id}`,
+    DELETE: (id: number) => `/proveedores/${id}`,
+  },
+  VENTAS: {
+    LIST: '/ventas',
+    GET: (id: number) => `/ventas/${id}`,
+    CREATE: '/ventas',
+    UPDATE_STATE: (id: number) => `/ventas/${id}/estado`,
+    BY_USER: (id: number) => `/ventas/usuario/${id}`,
+  },
+  PAGOS: {
+    LIST: '/pagos',
+    BY_PEDIDO: (id: number) => `/pagos/pedido/${id}`,
+    CREATE: '/pagos',
+  },
+  ENVIOS: {
+    LIST: '/envios',
+    CREATE: '/envios',
+    UPDATE_STATE: (id: number) => `/envios/${id}/estado`,
+  },
+  DEVOLUCIONES: {
+    LIST: '/devoluciones',
+    BY_PEDIDO: (id: number) => `/devoluciones/pedido/${id}`,
+  },
+  INVENTARIO: {
+    LIST: '/inventario',
+    LOW_STOCK: '/inventario/bajo-stock',
+    CREATE: '/inventario',
+    UPDATE: (id: number) => `/inventario/${id}`,
+  },
+  MOVIMIENTOS: {
+    LIST: '/movimientos-inventario',
+    CREATE: '/movimientos-inventario',
+  },
+  ALMACENES: {
+    LIST: '/almacenes',
+    CREATE: '/almacenes',
+    UPDATE: (id: number) => `/almacenes/${id}`,
+    DELETE: (id: number) => `/almacenes/${id}`,
+  },
+  ORDENES_COMPRA: {
+    LIST: '/ordenes-compra',
+    CREATE: '/ordenes-compra',
+  },
+  CUPONES: {
+    LIST: '/cupones',
+    CREATE: '/cupones',
+    UPDATE: (id: number) => `/cupones/${id}`,
+    DELETE: (id: number) => `/cupones/${id}`,
+  },
+  METODOS_PAGO: {
+    LIST: '/metodos-pago',
+    CREATE: '/metodos-pago',
+    UPDATE: (id: number) => `/metodos-pago/${id}`,
+    DELETE: (id: number) => `/metodos-pago/${id}`,
+  },
+  VARIANTES: {
+    BY_PRODUCTO: (id: number) => `/variantes/producto/${id}`,
+  },
+  TRANSPORTISTAS: {
+    LIST: '/transportistas',
+    CREATE: '/transportistas',
+    UPDATE: (id: number) => `/transportistas/${id}`,
+    DELETE: (id: number) => `/transportistas/${id}`,
+  },
+  SUCURSALES: {
+    LIST: '/sucursales',
+    RECOJO: '/sucursales/recojo',
+    CREATE: '/sucursales',
+    UPDATE: (id: number) => `/sucursales/${id}`,
+    DELETE: (id: number) => `/sucursales/${id}`,
+  },
+  RESENAS: {
+    LIST: '/resenas',
+    BY_PRODUCTO: (id: number) => `/resenas/producto/${id}`,
+  },
+  LISTA_DESEOS: {
+    BY_USER: (id: number) => `/lista-deseos/${id}`,
+    AGREGAR: '/lista-deseos',
+    DELETE_VARIANTE: (usuarioId: number, varianteId: number) => `/lista-deseos/usuario/${usuarioId}/variante/${varianteId}`,
+  },
+  REPORTES: {
+    RESUMEN: '/reportes/resumen',
+    DASHBOARD: '/reportes/dashboard',
+    VENDEDOR: '/reportes/ventas-por-vendedor',
+  },
+  AUDITORIA: {
+    LIST: '/auditorias',
+    BY_USER: (id: number) => `/auditorias/usuario/${id}`,
+    BY_ENTIDAD: (e: string) => `/auditorias/entidad/${e}`,
+  },
+  NOTIFICACIONES: {
+    BY_USER: (id: number) => `/notificaciones/usuario/${id}`,
+    NO_LEIDAS: (id: number) => `/notificaciones/usuario/${id}/no-leidas`,
+    CONTAR: (id: number) => `/notificaciones/usuario/${id}/contar-no-leidas`,
+    MARCAR_LEIDA: (id: number) => `/notificaciones/${id}/leida`,
+    MARCAR_TODAS: (id: number) => `/notificaciones/usuario/${id}/marcar-todas-leidas`,
+  },
+  CARRITO: {
+    GET: (id: number) => `/carrito/${id}`,
+    AGREGAR: (id: number) => `/carrito/${id}/agregar`,
+    ELIMINAR_ITEM: (usuarioId: number, detalleId: number) => `/carrito/${usuarioId}/item/${detalleId}`,
+    VACIAR: (id: number) => `/carrito/${id}/vaciar`,
+  },
+  CHECKOUT: {
+    CHECKOUT: '/checkout',
+    METODOS_PAGO: '/checkout/metodos-pago',
+    LUGARES_RECOJO: '/checkout/lugares-recojo',
+  },
+  DIRECCIONES: {
+    BY_USER: (id: number) => `/direcciones/usuario/${id}`,
+    CREATE: (id: number) => `/direcciones/usuario/${id}`,
+    DELETE: (id: number) => `/direcciones/${id}`,
+  },
+  CONFIGURACION: {
+    GET: '/configuracion',
+    UPDATE: '/configuracion',
+  },
+  UPLOADS: {
+    PRODUCTO: (nombre: string) => `/uploads/productos/${nombre}`,
+    CATEGORIA: (nombre: string) => `/uploads/categorias/${nombre}`,
+    DELETE: '/uploads/eliminar',
+  },
+} as const
